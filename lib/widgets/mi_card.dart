@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+
+Color miCardBgColor = Colors.cyan.shade900;
+
 class MiCard extends StatelessWidget {
   const MiCard({
     Key key,
@@ -9,11 +12,12 @@ class MiCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        backgroundColor: Colors.blueGrey.shade900,
+        backgroundColor: miCardBgColor,
         body: SafeArea(
             child: Container(
-                color: Colors.blueGrey.shade900,
+                color: miCardBgColor,
                 child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     CircleAvatar(
                       radius: 50,
@@ -42,16 +46,18 @@ class MiCard extends StatelessWidget {
                                 color: Colors.white),
                           ),
                         ),
-                        Divider(
-                          color: Colors.white,
-                          indent: 30,
-                          endIndent: 30,
+                        SizedBox(
+                          height: 20,
+                          width: 200,
+                          child: Divider(
+                            color: Colors.white,
+                          ),
                         ),
-                        buildMiCardRowContainer(
+                        buildMiCardRowCard(
                             Icons.code, "https://github.com/im-adarsh"),
-                        buildMiCardRowContainer(
+                        buildMiCardRowCard(
                             Icons.phone, "+65 1234 5678"),
-                        buildMiCardRowContainer(
+                        buildMiCardRowCard(
                             Icons.email, "adarshkumar9820@gmail.com"),
                       ],
                     )
@@ -61,31 +67,29 @@ class MiCard extends StatelessWidget {
     );
   }
 
-  Container buildMiCardRowContainer(IconData icon, String text) {
-    return Container(
+  Card buildMiCardRowCard(IconData icon, String text) {
+    return Card(
       color: Colors.white,
-      padding: EdgeInsets.all(10),
       margin: EdgeInsets.symmetric(
-        vertical: 10,
-        horizontal: 25,
+          vertical: 10, horizontal: 25
       ),
-      child: Row(
-        children: <Widget>[
-          Icon(
-            icon,
-            color: Colors.blueGrey.shade900,
-          ),
-          SizedBox(
-            width: 10.0,
-          ),
-          Text(
-            text,
-            style: TextStyle(
-              fontSize: 15.0,
-              color: Colors.blueGrey.shade900,
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Row(
+          children: <Widget>[
+            Icon(
+              icon,
+              color: miCardBgColor,
             ),
-          ),
-        ],
+            Text(
+              text,
+              style: TextStyle(
+                fontSize: 15.0,
+                color: miCardBgColor,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
