@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutteriamrich/widgets/im_rich.dart';
+import 'package:flutteriamrich/screens/dice.dart';
 
-void main() => runApp(IAmRich());
+void main() =>
+    runApp(Dice());
