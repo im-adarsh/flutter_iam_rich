@@ -56,6 +56,7 @@ class _DiceWidgetState extends State<DiceWidget> {
               fontFamily: "Source-Sans",
               fontSize: 20.0,
               letterSpacing: 2.5,
+              fontWeight: FontWeight.bold,
               color: Colors.redAccent),
         )
       ];
@@ -67,6 +68,7 @@ class _DiceWidgetState extends State<DiceWidget> {
               fontFamily: "Source-Sans",
               fontSize: 20.0,
               letterSpacing: 2.5,
+              fontWeight: FontWeight.bold,
               color: Colors.redAccent),
         ),
         SizedBox(
@@ -81,6 +83,7 @@ class _DiceWidgetState extends State<DiceWidget> {
               fontFamily: "Source-Sans",
               fontSize: 20.0,
               letterSpacing: 2.5,
+              fontWeight: FontWeight.bold,
               color: Colors.redAccent),
         )
       ];
