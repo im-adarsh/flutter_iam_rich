@@ -1,6 +1,6 @@
 # flutteriamrich
 
-Simple flutter app that says i am rich
+Simple flutter app that says i am rich <br>
 ![alt text](docs/im_rich.png)
 
 # flutter mi_card
