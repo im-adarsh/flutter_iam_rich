@@ -9,7 +9,7 @@ void main() => runApp(MaterialApp(
     ),
     body: Center(
       child: Image(
-        image: AssetImage('assets/images/iamrich.png'),
+        image: AssetImage('assets/iamrich.png'),
       ),
     ),
   ),
