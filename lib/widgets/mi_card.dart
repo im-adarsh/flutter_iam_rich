@@ -49,10 +49,13 @@ class MiCard extends StatelessWidget {
                         ),
                         Container(
                           color: Colors.white,
-                          height: 30,
-                          width: 350,
+
+                          padding: EdgeInsets.all(10),
+                          margin: EdgeInsets.symmetric(
+                            vertical: 10,
+                            horizontal: 25,
+                          ),
                           child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
                             children: <Widget>[
                               Icon(
                                 Icons.code,
@@ -71,13 +74,14 @@ class MiCard extends StatelessWidget {
                             ],
                           ),
                         ),
-                        Divider(),
                         Container(
                           color: Colors.white,
-                          height: 30,
-                          width: 350,
+                          padding: EdgeInsets.all(10),
+                          margin: EdgeInsets.symmetric(
+                            vertical: 10,
+                            horizontal: 25,
+                          ),
                           child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
                             children: <Widget>[
                               Icon(
                                 Icons.phone,
@@ -88,6 +92,32 @@ class MiCard extends StatelessWidget {
                               ),
                               Text(
                                 "+65 1234 5678",
+                                style: TextStyle(
+                                  fontSize: 15.0,
+                                  color: Colors.blueGrey.shade900,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Container(
+                          color: Colors.white,
+                          padding: EdgeInsets.all(10),
+                          margin: EdgeInsets.symmetric(
+                            vertical: 10,
+                            horizontal: 25,
+                          ),
+                          child: Row(
+                            children: <Widget>[
+                              Icon(
+                                Icons.email,
+                                color: Colors.blueGrey.shade900,
+                              ),
+                              SizedBox(
+                                width: 10.0,
+                              ),
+                              Text(
+                                "adarshkumar9820@gmail.com",
                                 style: TextStyle(
                                   fontSize: 15.0,
                                   color: Colors.blueGrey.shade900,
