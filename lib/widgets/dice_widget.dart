@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
 
+enum Player {
+  left,
+  right,
+}
+
 class DiceWidget extends StatelessWidget {
   const DiceWidget({
     Key key,
@@ -19,8 +24,8 @@ class DiceWidget extends StatelessWidget {
         Center(
           child: Row(
             children: <Widget>[
-              buildDiceCard("assets/icons/dice-1.png", "left"),
-              buildDiceCard("assets/icons/dice-2.png", "right"),
+              buildDiceCard("assets/icons/dice-1.png", Player.left),
+              buildDiceCard("assets/icons/dice-2.png", Player.right),
             ],
           ),
         ),
@@ -28,11 +33,11 @@ class DiceWidget extends StatelessWidget {
     );
   }
 
-  Expanded buildDiceCard(String assetImagePath, String player) {
+  Expanded buildDiceCard(String assetImagePath, Player player) {
     return Expanded(
       child: FlatButton(
         onPressed: () {
-          print(player + " clicked the dice");
+          print(player.toString() + " clicked the dice");
         },
         child: Image(
           image: AssetImage(assetImagePath),
