@@ -47,89 +47,45 @@ class MiCard extends StatelessWidget {
                           indent: 30,
                           endIndent: 30,
                         ),
-                        Container(
-                          color: Colors.white,
-
-                          padding: EdgeInsets.all(10),
-                          margin: EdgeInsets.symmetric(
-                            vertical: 10,
-                            horizontal: 25,
-                          ),
-                          child: Row(
-                            children: <Widget>[
-                              Icon(
-                                Icons.code,
-                                color: Colors.blueGrey.shade900,
-                              ),
-                              SizedBox(
-                                width: 10.0,
-                              ),
-                              Text(
-                                "https://github.com/im-adarsh",
-                                style: TextStyle(
-                                  fontSize: 15.0,
-                                  color: Colors.blueGrey.shade900,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        Container(
-                          color: Colors.white,
-                          padding: EdgeInsets.all(10),
-                          margin: EdgeInsets.symmetric(
-                            vertical: 10,
-                            horizontal: 25,
-                          ),
-                          child: Row(
-                            children: <Widget>[
-                              Icon(
-                                Icons.phone,
-                                color: Colors.blueGrey.shade900,
-                              ),
-                              SizedBox(
-                                width: 10.0,
-                              ),
-                              Text(
-                                "+65 1234 5678",
-                                style: TextStyle(
-                                  fontSize: 15.0,
-                                  color: Colors.blueGrey.shade900,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        Container(
-                          color: Colors.white,
-                          padding: EdgeInsets.all(10),
-                          margin: EdgeInsets.symmetric(
-                            vertical: 10,
-                            horizontal: 25,
-                          ),
-                          child: Row(
-                            children: <Widget>[
-                              Icon(
-                                Icons.email,
-                                color: Colors.blueGrey.shade900,
-                              ),
-                              SizedBox(
-                                width: 10.0,
-                              ),
-                              Text(
-                                "adarshkumar9820@gmail.com",
-                                style: TextStyle(
-                                  fontSize: 15.0,
-                                  color: Colors.blueGrey.shade900,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
+                        buildMiCardRowContainer(
+                            Icons.code, "https://github.com/im-adarsh"),
+                        buildMiCardRowContainer(
+                            Icons.phone, "+65 1234 5678"),
+                        buildMiCardRowContainer(
+                            Icons.email, "adarshkumar9820@gmail.com"),
                       ],
                     )
                   ],
                 ))),
+      ),
+    );
+  }
+
+  Container buildMiCardRowContainer(IconData icon, String text) {
+    return Container(
+      color: Colors.white,
+      padding: EdgeInsets.all(10),
+      margin: EdgeInsets.symmetric(
+        vertical: 10,
+        horizontal: 25,
+      ),
+      child: Row(
+        children: <Widget>[
+          Icon(
+            icon,
+            color: Colors.blueGrey.shade900,
+          ),
+          SizedBox(
+            width: 10.0,
+          ),
+          Text(
+            text,
+            style: TextStyle(
+              fontSize: 15.0,
+              color: Colors.blueGrey.shade900,
+            ),
+          ),
+        ],
       ),
     );
   }
