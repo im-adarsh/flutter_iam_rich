@@ -1,6 +1,7 @@
 # flutteriamrich
 
 Simple flutter app that says i am rich <br>
+- [Wiki: I am rich app](https://en.wikipedia.org/wiki/I_Am_Rich) <br>
 ![alt text](docs/im_rich.png)
 
 # flutter mi_card
