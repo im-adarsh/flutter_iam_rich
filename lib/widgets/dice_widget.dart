@@ -18,6 +18,7 @@ class _DiceWidgetState extends State<DiceWidget> {
   var leftDiceSum = 1;
   var rightDiceSum = 1;
 
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -43,15 +44,35 @@ class _DiceWidgetState extends State<DiceWidget> {
     );
   }
 
-  List<Widget> buildPlayerMessage() {
-    if (leftDiceSum == rightDiceSum) {
+  void resetState(int i) {
+    setState(() {
       leftDiceNumber = 1;
       rightDiceNumber = 1;
       leftDiceSum = 1;
       rightDiceSum = 1;
+    }
+    );
+  }
+
+  List<Widget> buildPlayerMessage() {
+    if (leftDiceSum == rightDiceSum && leftDiceSum > 1) {
+      resetState(0);
       return <Widget>[
         Text(
           "Someone Won",
+          style: TextStyle(
+              fontFamily: "Source-Sans",
+              fontSize: 20.0,
+              letterSpacing: 2.5,
+              fontWeight: FontWeight.bold,
+              color: Colors.redAccent),
+        )
+      ];
+    } else
+    if (leftDiceSum == rightDiceSum && (leftDiceSum == 1 || leftDiceSum == 0)) {
+      return <Widget>[
+        Text(
+          "Lets Begin",
           style: TextStyle(
               fontFamily: "Source-Sans",
               fontSize: 20.0,
