@@ -8,30 +8,19 @@ class DiceWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
         Center(
           child: Row(
             children: <Widget>[
-              Expanded(
-                child: Image(
-                  image: AssetImage("assets/icons/dice-1.png"),
-                  color: Colors.redAccent,
-                ),
-              ),
-              Expanded(
-                child: Image(
-                  image: AssetImage("assets/icons/dice-1.png"),
-                  color: Colors.redAccent,
-                ),
-              ),
             ],
           ),
         ),
         Center(
           child: Row(
             children: <Widget>[
-              buildDiceCard("assets/icons/dice-1.png"),
-              buildDiceCard("assets/icons/dice-1.png"),
+              buildDiceCard("assets/icons/dice-1.png", "left"),
+              buildDiceCard("assets/icons/dice-2.png", "right"),
             ],
           ),
         ),
@@ -39,13 +28,12 @@ class DiceWidget extends StatelessWidget {
     );
   }
 
-  Expanded buildDiceCard(String assetImagePath) {
+  Expanded buildDiceCard(String assetImagePath, String player) {
     return Expanded(
-      child: Card(
-        elevation: 4,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(25.0),
-        ),
+      child: FlatButton(
+        onPressed: () {
+          print(player + " clicked the dice");
+        },
         child: Image(
           image: AssetImage(assetImagePath),
           color: Colors.redAccent,
