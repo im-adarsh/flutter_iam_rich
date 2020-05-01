@@ -1,4 +1,4 @@
 import 'package:flutter/material.dart';
-import 'widgets/mi_card.dart';
+import 'package:flutteriamrich/widgets/im_rich.dart';
 
-void main() => runApp(MiCard());
+void main() => runApp(IAmRich());
