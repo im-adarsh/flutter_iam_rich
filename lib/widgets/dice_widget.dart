@@ -30,39 +30,29 @@ class DiceWidget extends StatelessWidget {
         Center(
           child: Row(
             children: <Widget>[
-              Expanded(
-
-                child: Card(
-                  elevation: 4,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(25.0),
-                  ),
-                  child: Image(
-                    image: AssetImage("assets/icons/dice-1.png"),
-                    color: Colors.redAccent,
-                    alignment: Alignment.center,
-                    fit: BoxFit.cover,
-                  ),
-                ),
-              ),
-              Expanded(
-                child: Card(
-                  elevation: 4,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(25.0),
-                  ),
-                  child: Image(
-                    image: AssetImage("assets/icons/dice-1.png"),
-                    color: Colors.redAccent,
-                    alignment: Alignment.center,
-                    fit: BoxFit.cover,
-                  ),
-                ),
-              ),
+              buildDiceCard("assets/icons/dice-1.png"),
+              buildDiceCard("assets/icons/dice-1.png"),
             ],
           ),
         ),
       ],
+    );
+  }
+
+  Expanded buildDiceCard(String assetImagePath) {
+    return Expanded(
+      child: Card(
+        elevation: 4,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(25.0),
+        ),
+        child: Image(
+          image: AssetImage(assetImagePath),
+          color: Colors.redAccent,
+          alignment: Alignment.center,
+          fit: BoxFit.cover,
+        ),
+      ),
     );
   }
 }
