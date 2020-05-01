@@ -25,6 +25,7 @@ class _DiceWidgetState extends State<DiceWidget> {
       children: <Widget>[
         Center(
           child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: buildPlayerMessage(),
           ),
         ),
@@ -44,19 +45,44 @@ class _DiceWidgetState extends State<DiceWidget> {
 
   List<Widget> buildPlayerMessage() {
     if (leftDiceSum == rightDiceSum) {
+      leftDiceNumber = 1;
+      rightDiceNumber = 1;
+      leftDiceSum = 1;
+      rightDiceSum = 1;
       return <Widget>[
-        Text("Someone won")
+        Text(
+          "Someone Won",
+          style: TextStyle(
+              fontFamily: "Source-Sans",
+              fontSize: 20.0,
+              letterSpacing: 2.5,
+              color: Colors.redAccent),
+        )
       ];
     } else {
       return <Widget>[
-        Text("$leftDiceSum"),
+        Text(
+          "$leftDiceSum",
+          style: TextStyle(
+              fontFamily: "Source-Sans",
+              fontSize: 20.0,
+              letterSpacing: 2.5,
+              color: Colors.redAccent),
+        ),
         SizedBox(
           width: 200,
           child: Divider(
             color: Colors.white,
           ),
         ),
-        Text("$rightDiceSum")
+        Text(
+          "$rightDiceSum",
+          style: TextStyle(
+              fontFamily: "Source-Sans",
+              fontSize: 20.0,
+              letterSpacing: 2.5,
+              color: Colors.redAccent),
+        )
       ];
     }
   }
