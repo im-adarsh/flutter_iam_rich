@@ -15,6 +15,8 @@ class DiceWidget extends StatefulWidget {
 class _DiceWidgetState extends State<DiceWidget> {
   var leftDiceNumber = 1;
   var rightDiceNumber = 1;
+  var leftDiceSum = 1;
+  var rightDiceSum = 1;
 
   @override
   Widget build(BuildContext context) {
@@ -23,8 +25,7 @@ class _DiceWidgetState extends State<DiceWidget> {
       children: <Widget>[
         Center(
           child: Row(
-            children: <Widget>[
-            ],
+            children: buildPlayerMessage(),
           ),
         ),
         Center(
@@ -41,6 +42,25 @@ class _DiceWidgetState extends State<DiceWidget> {
     );
   }
 
+  List<Widget> buildPlayerMessage() {
+    if (leftDiceSum == rightDiceSum) {
+      return <Widget>[
+        Text("Someone won")
+      ];
+    } else {
+      return <Widget>[
+        Text("$leftDiceSum"),
+        SizedBox(
+          width: 200,
+          child: Divider(
+            color: Colors.white,
+          ),
+        ),
+        Text("$rightDiceSum")
+      ];
+    }
+  }
+
   Expanded buildDiceCard(String assetImagePath, Player player) {
     return Expanded(
       child: FlatButton(
@@ -54,13 +74,17 @@ class _DiceWidgetState extends State<DiceWidget> {
             switch (player) {
               case Player.left:
                 leftDiceNumber = n;
+                leftDiceSum += leftDiceNumber;
                 break;
               case Player.right:
                 rightDiceNumber = n;
+                rightDiceSum += rightDiceNumber;
                 break;
               default:
                 leftDiceNumber = n;
                 rightDiceNumber = n;
+                leftDiceSum += leftDiceNumber;
+                rightDiceSum += rightDiceNumber;
             }
           });
         },
