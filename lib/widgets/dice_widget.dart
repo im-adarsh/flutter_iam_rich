@@ -117,10 +117,7 @@ class _DiceWidgetState extends State<DiceWidget> {
         onPressed: () {
           setState(() {
             var rng = new Random();
-            var n = rng.nextInt(7);
-            if (n == 0) {
-              n = 1;
-            }
+            var n = rng.nextInt(6) + 1;
             switch (player) {
               case Player.left:
                 leftDiceNumber = n;
