@@ -1,16 +1,4 @@
 import 'package:flutter/material.dart';
+import 'widgets/mi_card.dart';
 
-void main() => runApp(MaterialApp(
-  home: Scaffold(
-    backgroundColor: Colors.blueGrey,
-    appBar: AppBar(
-      title: Center(child: Text("I am rich")),
-      backgroundColor: Colors.blueGrey[900],
-    ),
-    body: Center(
-      child: Image(
-        image: AssetImage('assets/iamrich.png'),
-      ),
-    ),
-  ),
-));
+void main() => runApp(MiCard());
