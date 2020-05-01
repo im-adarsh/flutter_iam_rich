@@ -12,6 +12,8 @@ class DiceWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var leftDiceNumber = 2;
+    var rightDiceNumber = 2;
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
@@ -24,8 +26,10 @@ class DiceWidget extends StatelessWidget {
         Center(
           child: Row(
             children: <Widget>[
-              buildDiceCard("assets/icons/dice-1.png", Player.left),
-              buildDiceCard("assets/icons/dice-2.png", Player.right),
+              buildDiceCard(
+                  "assets/icons/dice-$leftDiceNumber.png", Player.left),
+              buildDiceCard(
+                  "assets/icons/dice-$rightDiceNumber.png", Player.right),
             ],
           ),
         ),
