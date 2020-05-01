@@ -2,6 +2,10 @@
 
 Simple flutter app that says i am rich
 
+# flutter mi_card
+
+![alt text](docs/mi_card.png)
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.

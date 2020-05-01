@@ -81,6 +81,9 @@ class MiCard extends StatelessWidget {
               icon,
               color: miCardBgColor,
             ),
+            SizedBox(
+              width: 10,
+            ),
             Text(
               text,
               style: TextStyle(
