@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 enum Player {
@@ -5,15 +7,17 @@ enum Player {
   right,
 }
 
-class DiceWidget extends StatelessWidget {
-  const DiceWidget({
-    Key key,
-  }) : super(key: key);
+class DiceWidget extends StatefulWidget {
+  @override
+  _DiceWidgetState createState() => _DiceWidgetState();
+}
+
+class _DiceWidgetState extends State<DiceWidget> {
+  var leftDiceNumber = 1;
+  var rightDiceNumber = 1;
 
   @override
   Widget build(BuildContext context) {
-    var leftDiceNumber = 2;
-    var rightDiceNumber = 2;
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
@@ -41,7 +45,24 @@ class DiceWidget extends StatelessWidget {
     return Expanded(
       child: FlatButton(
         onPressed: () {
-          print(player.toString() + " clicked the dice");
+          setState(() {
+            var rng = new Random();
+            var n = rng.nextInt(7);
+            if (n == 0) {
+              n = 1;
+            }
+            switch (player) {
+              case Player.left:
+                leftDiceNumber = n;
+                break;
+              case Player.right:
+                rightDiceNumber = n;
+                break;
+              default:
+                leftDiceNumber = n;
+                rightDiceNumber = n;
+            }
+          });
         },
         child: Image(
           image: AssetImage(assetImagePath),
